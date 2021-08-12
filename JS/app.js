@@ -117,6 +117,8 @@ ShopOfSalmonCookie.prototype.render = function ()
         thEl70.textContent = newTotal;
     };
 
+
+    
     
     shopA.numCustomersPerHour();
     shopA.numCookiesPerHour();
