@@ -94,7 +94,11 @@ ShopOfSalmonCookie.prototype.render = function ()
         tableEl.appendChild(trEl)
         let thEl20 = document.createElement('td');
         trEl.appendChild(thEl20);
+
         thEl20.textContent = 'Total';
+
+        thEl20.textContent = 'total';
+
         let newTotal = 0;
         
         for(let i = 0 ; i < hours.length; i++)
@@ -116,6 +120,7 @@ ShopOfSalmonCookie.prototype.render = function ()
         trEl.appendChild(thEl70);
         thEl70.textContent = newTotal;
     };
+
 
     shopA.numCustomersPerHour();
     shopA.numCookiesPerHour();
