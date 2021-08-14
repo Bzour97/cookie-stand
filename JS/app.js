@@ -87,6 +87,30 @@ ShopOfSalmonCookie.prototype.render = function ()
         trEl.appendChild(thEl10);
         thEl10.textContent = 'Daily Total';
       }
+    
+      let form = document.getElementById('form');
+    form.addEventListener('submit', addShop);
+    function addShop(event) {
+    
+        event.preventDefault();
+        let location = event.target.location.value;
+        let minCustomer = event.target.minCustomer.value;
+        let maxCustomer = event.target.maxCustomer.value;
+        let avgCookies = event.target.avgCookies.value;
+        let newShop = new ShopOfSalmonCookie (location, minCustomer, maxCustomer, avgCookies);
+        
+
+        let table = tableEl.rows.length-1;
+            tableEl.deleteRow(table);
+
+            newShop.numCustomersPerHour();
+            newShop.numCookiesPerHour();
+            newShop.render();
+
+            tableFooterCreater();
+
+        }
+        
      tableHeaderCreater();
      
     function tableFooterCreater(){
